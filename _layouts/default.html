@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — QA Meditations</title>
+  <title>{{ page.title }} — QA Meditations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet" />
   <style>
@@ -63,7 +63,6 @@
       text-align: center;
       padding: 64px 24px 48px;
       border-bottom: 1px solid var(--rule);
-      animation: fadeDown 1s ease both;
     }
 
     .site-eyebrow {
@@ -84,6 +83,8 @@
       color: var(--ink);
       line-height: 1.1;
       margin-bottom: 14px;
+      text-decoration: none;
+      display: block;
     }
 
     .site-title em { font-style: italic; color: var(--amber-deep); }
@@ -95,16 +96,6 @@
       margin: 20px auto;
     }
 
-    .site-tagline {
-      font-family: 'EB Garamond', serif;
-      font-size: 16px;
-      font-style: italic;
-      color: var(--ink-soft);
-      max-width: 480px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-
     nav {
       position: relative;
       z-index: 1;
@@ -113,7 +104,6 @@
       gap: 40px;
       padding: 20px 24px;
       border-bottom: 1px solid var(--rule);
-      animation: fadeDown 1s 0.1s ease both;
       flex-wrap: wrap;
     }
 
@@ -132,96 +122,6 @@
     main {
       position: relative;
       z-index: 1;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 72px 32px 80px;
-    }
-
-    .section-label {
-      font-family: 'Cinzel', serif;
-      font-size: 9px;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 48px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, var(--rule), transparent);
-    }
-
-    .post-list {
-      list-style: none;
-    }
-
-    .post-item {
-      border-top: 1px solid var(--rule);
-      padding: 40px 0;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    .post-item:last-child {
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .post-date {
-      font-family: 'Cinzel', serif;
-      font-size: 8px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 12px;
-    }
-
-    .post-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(22px, 3.5vw, 30px);
-      font-weight: 400;
-      line-height: 1.25;
-      color: var(--ink);
-      margin-bottom: 14px;
-    }
-
-    .post-title a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .post-title a:hover { color: var(--amber-deep); }
-
-    .post-desc {
-      font-size: 16px;
-      color: var(--ink-soft);
-      line-height: 1.8;
-      margin-bottom: 20px;
-      max-width: 600px;
-    }
-
-    .post-read-more {
-      font-family: 'Cinzel', serif;
-      font-size: 9px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--amber);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .post-read-more:hover { color: var(--amber-deep); }
-
-    .empty-state {
-      text-align: center;
-      padding: 80px 0;
-      color: var(--ink-faint);
-      font-style: italic;
-      font-size: 16px;
     }
 
     footer {
@@ -230,6 +130,7 @@
       border-top: 1px solid var(--rule);
       padding: 36px 32px;
       text-align: center;
+      margin-top: 80px;
     }
 
     .footer-logo {
@@ -246,59 +147,27 @@
       color: var(--ink-faint);
       font-style: italic;
     }
-
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="site-eyebrow">Practitioner Writings on Craft &amp; Quality</div>
-    <h1 class="site-title">QA <em>Meditations</em></h1>
+    <a href="/" class="site-title">QA <em>Meditations</em></a>
     <div class="site-rule"></div>
-    <p class="site-tagline">Field notes from forty years at the intersection of craft, technology, and testing.</p>
   </header>
 
   <nav>
-    <a href="/blog/" class="active">Blog</a>
+    <a href="/blog/">Blog</a>
     <a href="/#writings">Writings</a>
     <a href="/#field-notes">Field Notes</a>
-    <a href="https://rjcadvisors.com" target="_blank" rel="noreferrer">RJCadvisors</a>
-    <a href="https://qameditations.com" target="_blank" rel="noreferrer">QA Meditations</a>
-    <a href="https://theautomation.expert" target="_blank" rel="noreferrer">The Automation Expert</a>
+    <a href="https://rjcadvisors.com" target="_blank" rel="noreferrer">People</a>
+    <a href="https://qameditations.com">Process</a>
+    <a href="https://theautomation.expert" target="_blank" rel="noreferrer">Tools</a>
   </nav>
 
   <main>
-
-    <div class="section-label">Field Notes</div>
-
-    <ul class="post-list" id="postList">
-      <!-- Posts rendered by JavaScript from the blog/ directory -->
-      <li class="post-item">
-        <div class="post-date">May 2026</div>
-        <h2 class="post-title">
-          <a href="/blog/2026-05-21-you-re-not-behind-on-ai-you-re-optimizing-the-wrong-model/">
-            You're Not Behind on AI. You're Optimizing the Wrong Model.
-          </a>
-        </h2>
-        <p class="post-desc">
-          A capital strategy for leaders who are done explaining why the layoffs aren't working.
-          The problem isn't your tools. It's the structure they're bolted onto.
-        </p>
-        <a class="post-read-more" href="/blog/2026-05-21-you-re-not-behind-on-ai-you-re-optimizing-the-wrong-model/">
-          Read &rarr;
-        </a>
-      </li>
-    </ul>
-
+    {{ content }}
   </main>
 
   <footer>

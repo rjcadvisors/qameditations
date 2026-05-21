@@ -1,0 +1,13 @@
+title: QA Meditations
+description: Practitioner writings on craft, AI, and the future of quality.
+url: "https://qameditations.com"
+baseurl: ""
+
+permalink: /blog/:year-:month-:day-:title/
+
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - node_modules
+  - vendor
