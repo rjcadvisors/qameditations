@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — QA Meditations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --parchment:   #f5f0e8;
+      --parchment-2: #ede5d4;
+      --parchment-3: #e2d9c5;
+      --ink:         #1c1810;
+      --ink-mid:     #3d3428;
+      --ink-soft:    #6b5e4a;
+      --ink-faint:   #9a8c78;
+      --amber:       #c47c2b;
+      --amber-deep:  #9b5e1a;
+      --amber-glow:  #e8a84a;
+      --rule:        #c9bda8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--parchment);
+      color: var(--ink);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 128px;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 420px;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(196,124,43,0.12) 0%, transparent 70%);
+    }
+
+    header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 64px 24px 48px;
+      border-bottom: 1px solid var(--rule);
+      animation: fadeDown 1s ease both;
+    }
+
+    .site-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      color: var(--amber);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .site-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(38px, 7vw, 68px);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .site-title em { font-style: italic; color: var(--amber-deep); }
+
+    .site-rule {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--amber), transparent);
+      margin: 20px auto;
+    }
+
+    .site-tagline {
+      font-family: 'EB Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--ink-soft);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    nav {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--rule);
+      animation: fadeDown 1s 0.1s ease both;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active { color: var(--amber); }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 32px 80px;
+    }
+
+    .section-label {
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--rule), transparent);
+    }
+
+    .post-list {
+      list-style: none;
+    }
+
+    .post-item {
+      border-top: 1px solid var(--rule);
+      padding: 40px 0;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .post-item:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .post-date {
+      font-family: 'Cinzel', serif;
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 12px;
+    }
+
+    .post-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .post-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .post-title a:hover { color: var(--amber-deep); }
+
+    .post-desc {
+      font-size: 16px;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      max-width: 600px;
+    }
+
+    .post-read-more {
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .post-read-more:hover { color: var(--amber-deep); }
+
+    .empty-state {
+      text-align: center;
+      padding: 80px 0;
+      color: var(--ink-faint);
+      font-style: italic;
+      font-size: 16px;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--rule);
+      padding: 36px 32px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--ink-faint);
+      font-style: italic;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="site-eyebrow">Practitioner Writings on Craft &amp; Quality</div>
+    <h1 class="site-title">QA <em>Meditations</em></h1>
+    <div class="site-rule"></div>
+    <p class="site-tagline">Field notes from forty years at the intersection of craft, technology, and testing.</p>
+  </header>
+
+  <nav>
+    <a href="/blog/" class="active">Blog</a>
+    <a href="/#writings">Writings</a>
+    <a href="/#field-notes">Field Notes</a>
+    <a href="https://qameditations.com">People</a>
+    <a href="https://rjcadvisors.com" target="_blank" rel="noreferrer">Process</a>
+    <a href="https://automation.expert" target="_blank" rel="noreferrer">Tools</a>
+  </nav>
+
+  <main>
+
+    <div class="section-label">Field Notes</div>
+
+    <ul class="post-list" id="postList">
+      <!-- Posts rendered by JavaScript from the blog/ directory -->
+      <li class="post-item">
+        <div class="post-date">May 2026</div>
+        <h2 class="post-title">
+          <a href="/blog/2026-05-21-you-re-not-behind-on-ai-you-re-optimizing-the-wrong-model/">
+            You're Not Behind on AI. You're Optimizing the Wrong Model.
+          </a>
+        </h2>
+        <p class="post-desc">
+          A capital strategy for leaders who are done explaining why the layoffs aren't working.
+          The problem isn't your tools. It's the structure they're bolted onto.
+        </p>
+        <a class="post-read-more" href="/blog/2026-05-21-you-re-not-behind-on-ai-you-re-optimizing-the-wrong-model/">
+          Read &rarr;
+        </a>
+      </li>
+    </ul>
+
+  </main>
+
+  <footer>
+    <div class="footer-logo">RJCadvisors Inc. · Lawrence, Massachusetts</div>
+    <p class="footer-copy">
+      Independent QA advisory &amp; thought leadership. Oracle EBS and enterprise application testing.
+    </p>
+  </footer>
+
+</body>
+</html>
