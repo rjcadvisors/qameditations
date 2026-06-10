@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "The Puja Can't Be Ceremonial"
+title: The Puja Can't Be Ceremonial
 date: 2026-06-10
-description: "A new CEO once asked me who to believe. My answer changed how I think about leadership forever."
+description: A new CEO once asked me who to believe. My answer changed how I
+  think about leadership forever.
 ---
 
 I once sat across a conference room table from a newly appointed CEO and told him not to believe me.
@@ -13,7 +14,7 @@ The engineering manager and I had fundamentally different views of where the pro
 
 I told him I wouldn't believe either of us if I were sitting where he was sitting. We were both too dug in. What I suggested instead was that he go out to the rest of the organization... the sales engineers, the consultants, the support and development teams... and ask them. They were the ones closest to the customers. They knew where the product actually stood. Whatever he found out there would tell him what he needed to know, and then the decision would be his.
 
-My parents thought I'd lost my mind when I told them the story. You could have gotten yourself fired, they said. Why didn't you just smooth it over?
+My family thought I'd lost my mind when I told them the story. You could have gotten yourself fired, they said. Why didn't you just smooth it over?
 
 Because that wasn't the truth. I had built relationships with customers in the field and I felt a responsibility to them, to myself, and to the company to say what I actually believed no matter how it ended for me. And to his credit, the CEO didn't take the easy route either. He went out and did exactly what I suggested. He called together the people closest to the work and he listened to what they told him.
 
