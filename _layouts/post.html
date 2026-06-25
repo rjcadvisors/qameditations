@@ -140,9 +140,11 @@ layout: default
   <p class="post-description">{{ page.description }}</p>
   {% endif %}
 
-  <div class="post-body">
+ <div class="post-body">
     {{ content }}
   </div>
+  {% include subscribe-form.html %}
+  <div class="post-footer">
 
   <div class="post-footer">
     <span class="post-footer-author">Rick Cavallaro · RJCadvisors Inc.</span>
