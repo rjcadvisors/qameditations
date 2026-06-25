@@ -1,6 +1,8 @@
 ---
+layout: post
 title: The Load Test Is Dead. Long Live the Load Test.
 date: 2026-06-12T10:09:00.000-04:00
+description: A performance engineer's hypothesis about what agentic AI is actually doing to your infrastructure, and why nobody is watching.
 ---
 
 # The Load Test Is Dead. Long Live the Load Test.
