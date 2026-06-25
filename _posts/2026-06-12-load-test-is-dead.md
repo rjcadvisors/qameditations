@@ -1,3 +1,8 @@
+---
+title: The Load Test Is Dead. Long Live the Load Test.
+date: 2026-06-12T10:09:00.000-04:00
+---
+
 # The Load Test Is Dead. Long Live the Load Test.
 
 *A performance engineer's hypothesis about what agentic AI is actually doing to your infrastructure, and why nobody is watching.*
@@ -128,7 +133,7 @@ The classic model, every stakeholder in the room, every system channel instrumen
 
 ## What the Industry Has Not Built Yet
 
-I raised this question with Henry Ukwu, a systems engineer teaching enterprise AI at UMass Lowell, during a class session in early June. His response was direct: agent load does not equal traditional user load. Ten agents can crush a system that handles ten thousand normal users, because agents do not just make requests, they think, remember, retry, and chain tool calls. What to measure has changed: token throughput, context window usage, tool call frequency, queue depth, retry and loop behavior.
+I raised this question with Henry Ebomah, a systems engineer teaching enterprise AI agent workflow training, during a class session in early June. His response was direct: agent load does not equal traditional user load. Ten agents can crush a system that handles ten thousand normal users, because agents do not just make requests, they think, remember, retry, and chain tool calls. What to measure has changed: token throughput, context window usage, tool call frequency, queue depth, retry and loop behavior.
 
 And then he said something that I keep returning to: *"Honestly? The industry is still figuring this out. If you crack a solid methodology for agent load testing, you might be onto something valuable."*
 
