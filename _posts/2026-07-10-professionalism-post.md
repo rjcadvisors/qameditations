@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Prescription Before Diagnosis"
+date: 2026-07-10
+---
+
 You can tell a lot about someone's confidence in their own argument by what they do when it gets pushed on.
 
 I've been in a few exchanges lately where a disagreement stayed entirely on the substance. Not personal, not hostile, just someone pointing at a claim and asking for the reasoning behind it. And more than once now, the response wasn't a counterargument. It was the door slamming shut. Block the account, delete the thread, move on like it never happened.
