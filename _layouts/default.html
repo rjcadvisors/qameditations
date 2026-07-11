@@ -121,6 +121,17 @@
 On GitHub: open _layouts/default.html, click the pencil (edit) icon, find that nav { block, paste the media query in right after its closing }, then commit changes. Netlify will auto-rebuild.
 Once it's deployed, refresh on your phone (private/incognito tab to be safe) and check whether Blog and Tools are both visible now.
 
+    nav {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--rule);
+      flex-wrap: wrap;
+    }
+
     nav a {
       font-family: 'Cinzel', serif;
       font-size: 10px;
@@ -129,11 +140,27 @@ Once it's deployed, refresh on your phone (private/incognito tab to be safe) and
       color: var(--ink-soft);
       text-decoration: none;
       transition: color 0.2s;
+      white-space: nowrap;
     }
 
     nav a:hover, nav a.active { color: var(--amber); }
 
-    main {
+    @media (max-width: 480px) {
+      nav {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 20px;
+        padding: 16px 20px;
+      }
+      nav a {
+        font-size: 9px;
+        flex: 0 0 auto;
+      }
+    }
+
+                                                                                    main {
       position: relative;
       z-index: 1;
     }
