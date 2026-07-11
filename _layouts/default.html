@@ -96,7 +96,7 @@
       margin: 20px auto;
     }
 
-    nav {
+ nav {
       position: relative;
       z-index: 1;
       display: flex;
@@ -106,6 +106,20 @@
       border-bottom: 1px solid var(--rule);
       flex-wrap: wrap;
     }
+
+    @media (max-width: 480px) {
+      nav {
+        gap: 12px 20px;
+        padding: 16px 12px;
+      }
+      nav a {
+        font-size: 9px;
+      }
+    }
+
+    nav a {
+On GitHub: open _layouts/default.html, click the pencil (edit) icon, find that nav { block, paste the media query in right after its closing }, then commit changes. Netlify will auto-rebuild.
+Once it's deployed, refresh on your phone (private/incognito tab to be safe) and check whether Blog and Tools are both visible now.
 
     nav a {
       font-family: 'Cinzel', serif;
