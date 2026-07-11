@@ -115,23 +115,20 @@
       color: var(--ink-soft);
       text-decoration: none;
       transition: color 0.2s;
-      white-space: nowrap;
     }
 
     nav a:hover, nav a.active { color: var(--amber); }
 
     @media (max-width: 480px) {
       nav {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        gap: 20px;
-        padding: 16px 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px 8px;
+        padding: 16px 12px;
       }
       nav a {
         font-size: 9px;
-        flex: 0 0 auto;
+        text-align: center;
       }
     }
 
