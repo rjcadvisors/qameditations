@@ -3,7 +3,7 @@ layout: post
 title: The New Beautiful Testing
 date: 2026-04-30
 description: The New Beautiful Testing, QA Craft in the Age of AI
-------
+---
 
 
 There's a version of quality assurance that everyone already believes in and almost no one is practicing. Ask a room full of testers what good testing looks like and you'll get the same answer, more or less... curiosity, judgment, a feel for where the system is lying to you. Ask what they did yesterday and you'll get something else entirely. A script ran. A checkbox got checked. Nobody investigated anything.
