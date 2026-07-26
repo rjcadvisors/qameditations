@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "The New Beautiful Testing"
-date: 2026-04-30T12:50:00.000-04:00
+title: The New Beautiful Testing
+date: 2026-04-30
 description: The New Beautiful Testing, QA Craft in the Age of AI
-tags: [qa-philosophy, white-paper]
 ------
 
 
