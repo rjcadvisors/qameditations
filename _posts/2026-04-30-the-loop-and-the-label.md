@@ -2,7 +2,7 @@
 layout: post
 title: The Loop and the Label
 date: 2026-04-30
-description: Regression Testing: Labeled by What It Produces, Not What It's Meant For
+description: "Regression Testing: Labeled by What It Produces, Not What It's Meant For"
 ---
 
 
