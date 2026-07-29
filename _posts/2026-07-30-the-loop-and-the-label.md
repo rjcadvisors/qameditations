@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Loop and the Label
-date: 2026-07-30
+date: 2026-07-28T22:58:00.000-04:00
 description: "Regression Testing: Labeled by What It Produces, Not What It's Meant For"
 ---
 
