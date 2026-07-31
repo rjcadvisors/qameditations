@@ -3,6 +3,9 @@ description: Practitioner writings on craft, AI, and the future of quality.
 url: "https://qameditations.com"
 baseurl: ""
 
+plugins:
+  - jekyll-sitemap
+
 permalink: /blog/:year-:month-:day-:title/
 
 markdown: kramdown
