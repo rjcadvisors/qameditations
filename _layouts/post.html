@@ -144,6 +144,91 @@ layout: default
     {{ content }}
   </div>
   {% include subscribe-form.html %}
+
+<!--
+  Post rating widget for _layouts/post.html
+  Drop this near the end of the post content, above the subscribe form.
+
+  Relies on Jekyll's built-in `page.slug` (auto-derived from the filename,
+  date stripped) as the unique key per post — no front matter changes needed.
+-->
+
+<div class="post-rating" data-slug="{{ page.slug }}">
+  <button class="vote-btn" data-vote="up" aria-label="Thumbs up">
+    👍 <span class="count" id="up-count">–</span>
+  </button>
+  <button class="vote-btn" data-vote="down" aria-label="Thumbs down">
+    👎 <span class="count" id="down-count">–</span>
+  </button>
+</div>
+
+<script>
+(function () {
+  var container = document.querySelector('.post-rating');
+  if (!container) return;
+
+  var slug = container.dataset.slug;
+  var upCount = document.getElementById('up-count');
+  var downCount = document.getElementById('down-count');
+  var storageKey = 'voted-' + slug;
+
+  function render(data) {
+    upCount.textContent = data.up;
+    downCount.textContent = data.down;
+  }
+
+  fetch('/api/vote?slug=' + encodeURIComponent(slug))
+    .then(function (r) { return r.json(); })
+    .then(render)
+    .catch(function () { /* fail quietly, buttons still work */ });
+
+  if (localStorage.getItem(storageKey)) {
+    container.querySelectorAll('.vote-btn').forEach(function (b) { b.disabled = true; });
+  }
+
+  container.querySelectorAll('.vote-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (localStorage.getItem(storageKey)) return;
+
+      var vote = btn.dataset.vote;
+      fetch('/api/vote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug: slug, vote: vote }),
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          render(data);
+          localStorage.setItem(storageKey, vote);
+          container.querySelectorAll('.vote-btn').forEach(function (b) { b.disabled = true; });
+        });
+    });
+  });
+})();
+</script>
+
+<style>
+.post-rating {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.vote-btn {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.vote-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+</style>
+
+
+
   <div class="post-footer">
 
   <div class="post-footer">
