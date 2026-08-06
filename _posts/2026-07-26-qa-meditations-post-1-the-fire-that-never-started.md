@@ -2,7 +2,9 @@
 layout: post
 title: The Fire That Never Started
 date: 2026-07-26
-description: Exploratory Testing 2026, Craft in the Age of AI & Deep Stack Dividends 
+description: Exploratory Testing 2026, Craft in the Age of AI & Deep Stack Dividends
+series: exploratory-testing-dividend
+series_part: 1
 ---
 
 
