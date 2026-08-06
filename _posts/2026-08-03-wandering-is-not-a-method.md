@@ -3,6 +3,8 @@ layout: post
 title: "Wandering Is Not a Method"
 date: 2026-08-03
 description: "Exploratory testing has a credibility problem, and it isn't the practice's fault. It's what happens when wandering borrows the name without doing the work the name implies."
+series: exploratory-testing-dividend
+series_part: 2
 ---
 
 Somewhere along the way, "exploratory" became the word teams reach for when they mean "we didn't have time to plan this."
