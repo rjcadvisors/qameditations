@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Eleven Loops, Not Eleven Hundred"
-date: 2026-08-03
+date: 2026-09-13
 description: "A team had thousands of test cases and still couldn't find the bug. An architect asked one question and the real number of things worth testing dropped by two orders of magnitude."
 series: exploratory-testing-dividend
 series_part: 6
