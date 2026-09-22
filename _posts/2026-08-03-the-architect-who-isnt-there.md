@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Architect Who Isn't There"
-date: 2026-08-03
+date: 2026-09-22
 description: "Asking the architect how many real paths a system has works beautifully, right up until there's no architect left who remembers. Here's what to do instead."
 series: exploratory-testing-dividend
 series_part: 7
