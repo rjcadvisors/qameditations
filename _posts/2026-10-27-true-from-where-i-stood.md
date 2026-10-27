@@ -84,3 +84,5 @@ That same Friday, I posted a joke job listing under that thread. Advocate for th
 My verdict, for now, and offered for debate: testing may not need a louder megaphone. It may need a seat, and someone senior enough to sit in it.
 
 That’s true from where I stand. I’d like to hear what’s true from where you stand.
+
+I would love to hear from you...  rick@qameditations.com
