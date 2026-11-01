@@ -118,9 +118,11 @@
       position: relative;
       z-index: 1;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 40px;
-      padding: 20px 24px;
+      align-items: center;
+      gap: 12px 28px;
+      padding: 18px 16px;
       border-bottom: 1px solid var(--rule);
       animation: fadeDown 1s 0.1s ease both;
     }
@@ -133,6 +135,9 @@
       color: var(--ink-soft);
       text-decoration: none;
       transition: color 0.2s;
+      white-space: nowrap;
+      flex: 0 1 auto;
+      text-align: center;
     }
 
     nav a:hover { color: var(--amber); }
@@ -586,7 +591,47 @@
     }
     .field-error.visible { display: block; }
     .form-group input.invalid { border-color: #9b3a2a; }
+  
+    /* ── Essay tiles ── */
+    .tiles { max-width: 960px; margin: 0 auto; padding: 56px 32px 8px; }
+    .tiles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .tile {
+      display: flex; flex-direction: column;
+      border: 1px solid var(--rule);
+      background: var(--parchment-2);
+      padding: 28px 26px 24px;
+      text-decoration: none; color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .tile:hover { border-color: var(--amber); transform: translateY(-2px); }
+    .tile-label {
+      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--amber); margin-bottom: 14px;
+    }
+    .tile-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400;
+      line-height: 1.25; color: var(--ink); margin-bottom: 12px;
+    }
+    .tile-desc { font-size: 15px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 18px; }
+    .tile-more {
+      margin-top: auto; font-family: 'Cinzel', serif; font-size: 9px;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--amber-deep);
+    }
+    .tiles-all { text-align: center; margin-top: 28px; }
+    .tiles-all a {
+      font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--amber-deep); text-decoration: none;
+    }
+    .tiles-all a:hover { color: var(--amber); }
+    @media (max-width: 820px) { .tiles-grid { grid-template-columns: 1fr; } .tiles { padding: 40px 20px 0; } }
+
+    .footer-feed { color: var(--amber-deep); text-decoration: underline; text-decoration-color: var(--rule); }
+    .footer-feed:hover { color: var(--amber); }
   </style>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3797d9dd54bf4246b427335f695c8124"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+  {% feed_meta %}
 </head>
 <body>
 
@@ -600,9 +645,9 @@
 
   <!-- Nav -->
   <nav>
-    <a href="/blog/">Blog</a>
     <a href="#writings">Writings</a>
     <a href="#field-notes">Field Notes</a>
+    <a href="/blog/">Essays</a>
     <a href="https://rjcadvisors.com" target="_blank" rel="noreferrer">People</a>
     <a href="https://qameditations.com" target="_blank" rel="noreferrer">Process</a>
     <a href="https://theautomation.expert" target="_blank" rel="noreferrer">Tools</a>
@@ -655,6 +700,42 @@
     </section>
 
     <div class="ornament">· · ·</div>
+
+    <!-- Essay tiles: newest, start here, latest in the running series.
+         Which essay is "start here" and which series is featured is set in _config.yml. -->
+    {% assign newest = site.posts | first %}
+    {% assign start_here = site.posts | where: "url", site.start_here_url | first %}
+    {% assign series_latest = site.posts | where: "series", site.featured_series | sort: "series_part" | last %}
+    <section class="tiles" id="essays">
+      <div class="section-label">Essays</div>
+      <div class="tiles-grid">
+        {% if newest %}
+        <a class="tile" href="{{ newest.url }}">
+          <div class="tile-label">Newest</div>
+          <div class="tile-title">{{ newest.title }}</div>
+          {% if newest.description %}<p class="tile-desc">{{ newest.description | truncate: 180 }}</p>{% endif %}
+          <div class="tile-more">Read &rarr;</div>
+        </a>
+        {% endif %}
+        {% if start_here %}
+        <a class="tile" href="{{ start_here.url }}">
+          <div class="tile-label">Start here</div>
+          <div class="tile-title">{{ start_here.title }}</div>
+          {% if start_here.description %}<p class="tile-desc">{{ start_here.description | truncate: 180 }}</p>{% endif %}
+          <div class="tile-more">Read &rarr;</div>
+        </a>
+        {% endif %}
+        {% if series_latest %}
+        <a class="tile" href="{{ series_latest.url }}">
+          <div class="tile-label">Latest in the series &middot; Part {{ series_latest.series_part }}</div>
+          <div class="tile-title">{{ series_latest.title }}</div>
+          {% if series_latest.description %}<p class="tile-desc">{{ series_latest.description | truncate: 180 }}</p>{% endif %}
+          <div class="tile-more">Read &rarr;</div>
+        </a>
+        {% endif %}
+      </div>
+      <p class="tiles-all"><a href="/blog/">All essays &rarr;</a></p>
+    </section>
 
     <!-- Download Section -->
     <section class="download-section" id="download">
@@ -823,6 +904,7 @@
     <p class="footer-copy">
       Independent QA advisory &amp; thought leadership. Oracle EBS and enterprise application testing.
     </p>
+    <p class="footer-copy"><a href="/feed.xml" class="footer-feed">RSS feed</a></p>
   </footer>
 
   <script>

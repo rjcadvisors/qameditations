@@ -5,6 +5,7 @@ baseurl: ""
 
 plugins:
   - jekyll-sitemap
+  - jekyll-feed
 
 permalink: /blog/:year-:month-:day-:title/
 
@@ -14,3 +15,7 @@ highlighter: rouge
 exclude:
   - node_modules
   - vendor
+
+# Home page tiles. Swap these to change what the tiles feature.
+start_here_url: /blog/2026-06-12-load-test-is-dead/
+featured_series: exploratory-testing-dividend

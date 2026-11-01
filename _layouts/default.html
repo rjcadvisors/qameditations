@@ -146,12 +146,19 @@
       margin-bottom: 8px;
     }
 
+    .footer-feed { color: var(--amber-deep); text-decoration: underline; text-decoration-color: var(--rule); }
+    .footer-feed:hover { color: var(--amber); }
+
     .footer-copy {
       font-size: 12px;
       color: var(--ink-faint);
       font-style: italic;
     }
   </style>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3797d9dd54bf4246b427335f695c8124"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+  {% feed_meta %}
 </head>
 <body>
 
@@ -162,9 +169,9 @@
   </header>
 
   <nav>
-    <a href="/blog/">Blog</a>
     <a href="/#writings">Writings</a>
     <a href="/#field-notes">Field Notes</a>
+    <a href="/blog/">Essays</a>
     <a href="https://rjcadvisors.com" target="_blank" rel="noreferrer">People</a>
     <a href="https://qameditations.com">Process</a>
     <a href="https://theautomation.expert" target="_blank" rel="noreferrer">Tools</a>
@@ -179,6 +186,7 @@
     <p class="footer-copy">
       Independent QA advisory &amp; thought leadership. Oracle EBS and enterprise application testing.
     </p>
+    <p class="footer-copy"><a href="/feed.xml" class="footer-feed">RSS feed</a></p>
   </footer>
 
 </body>
