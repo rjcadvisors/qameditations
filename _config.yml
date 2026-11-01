@@ -19,3 +19,7 @@ exclude:
 # Home page tiles. Swap these to change what the tiles feature.
 start_here_url: /blog/2026-06-12-load-test-is-dead/
 featured_series: exploratory-testing-dividend
+
+author:
+  name: Rick Cavallaro
+  email: rick@qameditations.com
