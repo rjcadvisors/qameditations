@@ -1,0 +1,222 @@
+---
+layout: default
+title: Vocabulary
+description: The working vocabulary behind The New Beautiful Testing and RJCadvisors' practice, with the essays where each term lives.
+---
+<style>
+  .vocab-container { max-width: 760px; margin: 0 auto; padding: 72px 32px 80px; }
+
+  .section-label {
+    font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.4em;
+    text-transform: uppercase; color: var(--amber); margin: 56px 0 8px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .section-label:first-of-type { margin-top: 40px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--rule), transparent); }
+
+  .vocab-intro { font-size: 17px; color: var(--ink-mid); line-height: 1.8; margin-bottom: 8px; }
+  .vocab-jump { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px 24px; }
+  .vocab-jump a { color: var(--amber-deep); text-decoration: none; }
+  .vocab-jump a:hover { color: var(--amber); }
+
+  .term { border-top: 1px solid var(--rule); padding: 26px 0 24px; }
+  .term:last-child { border-bottom: 1px solid var(--rule); }
+  .term dt {
+    font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400;
+    line-height: 1.25; color: var(--ink); margin-bottom: 8px;
+  }
+  .term dd { font-size: 16px; line-height: 1.8; color: var(--ink-mid); margin: 0; }
+  .term .meta { font-size: 14px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+  .term .meta a, .term dd a { color: var(--amber-deep); text-decoration-color: var(--rule); }
+  .term .meta a:hover, .term dd a:hover { color: var(--amber); }
+  .term:target dt { color: var(--amber-deep); }
+
+  .attribution { font-size: 14px; color: var(--ink-soft); line-height: 1.8; margin-top: 8px; }
+  @media (max-width: 600px) { .vocab-container { padding: 48px 20px 64px; } .term dt { font-size: 22px; } }
+</style>
+
+<div class="vocab-container">
+  <p class="vocab-intro">
+    The New Beautiful Testing holds that craft knowledge from <em>Beautiful Testing</em> (O'Reilly, 2009)
+    is encoded in LLM weights, and that skilled practitioners are what activate it. These are the terms that
+    carry that thesis. Where a term lives in an essay, it's linked, so you can read it in use.
+  </p>
+  <div class="vocab-jump">
+    <a href="#core">Core concepts</a>
+    <a href="#failure-modes">Failure modes</a>
+    <a href="#depth-governance">Depth, governance and communication</a>
+    <a href="#practice">Practice</a>
+    <a href="#earlier-names">Earlier names</a>
+    <a href="#attribution">Attribution</a>
+  </div>
+
+  <div class="section-label" id="core">Core concepts</div>
+  <dl>
+    <div class="term" id="new-beautiful-testing">
+      <dt>The New Beautiful Testing</dt>
+      <dd>The argument that the craft knowledge in <em>Beautiful Testing</em> and the discipline's other formative texts is now encoded in LLM weights, and that skilled practitioners are what activate it. The craftsman and the model are inseparable in 2026, and organizations that miss this are already beginning to drift.
+        <div class="meta">Also known as: Enduring Craft. Read: <a href="/blog/2026-04-30-the-new-beautiful-testing-teaser/">The New Beautiful Testing</a>, or <a href="/#download">download the white paper</a>.</div>
+      </dd>
+    </div>
+    <div class="term" id="qa-activator">
+      <dt>QA Activator</dt>
+      <dd>The practitioner whose craft level determines how much of an AI platform's capability actually gets reached. Borrowed from neural network vocabulary, and the central original concept of the framework.</dd>
+    </div>
+    <div class="term" id="qa-ceiling">
+      <dt>QA Ceiling</dt>
+      <dd>The maximum testing quality an organization can reach, set by the activation level of its practitioners, not by its tools.</dd>
+    </div>
+    <div class="term" id="cointelligence">
+      <dt>Cointelligence</dt>
+      <dd>Practitioner plus model as one working unit, borrowed from Ethan Mollick's <em>Co-Intelligence</em>. In this framework, craftsman and model are inseparable in 2026.</dd>
+    </div>
+    <div class="term" id="craft-core">
+      <dt>Craft-Core</dt>
+      <dd>The asymmetric human and AI collaboration specific to this framework. Distinct from the broader idea of Cointelligence.</dd>
+    </div>
+    <div class="term" id="general-contractor-model">
+      <dt>General Contractor Model</dt>
+      <dd>The agentic-era practitioner role: doesn't swing every hammer, but directs the work, owns the outcome, and knows when the subcontractors are lying.
+        <div class="meta">Read: <a href="/blog/2026-04-30-the-new-beautiful-testing-teaser/">The New Beautiful Testing</a></div>
+      </dd>
+    </div>
+  </dl>
+
+  <div class="section-label" id="failure-modes">Failure modes</div>
+  <dl>
+    <div class="term" id="optical-integrity">
+      <dt>Optical Integrity</dt>
+      <dd>Governance succeeds and craft is absent. Everything looks compliant; nothing is actually sound.
+        <div class="meta">Read: <a href="/blog/2026-06-25-the-drift-audit/">The Drift Audit</a></div>
+      </dd>
+    </div>
+    <div class="term" id="validated-fragility">
+      <dt>Validated Fragility</dt>
+      <dd>A system passes every check and still fails when it matters, because it confidently did the wrong thing or was forced to pass at all costs. A judgment problem.
+        <div class="meta">Also known as: Verified Fragility. Read: <a href="/blog/2026-04-30-the-new-beautiful-testing-teaser/">The New Beautiful Testing</a></div>
+      </dd>
+    </div>
+    <div class="term" id="high-speed-fragility">
+      <dt>High-Speed Fragility</dt>
+      <dd>AI producing large volumes of fragile, deterministic tests quickly, at scale. A volume problem, distinct from Validated Fragility.</dd>
+    </div>
+    <div class="term" id="throughput-paradox">
+      <dt>Throughput Paradox</dt>
+      <dd>AI accelerates code production to machine speed while verification stays at human speed, so the gap widens.</dd>
+    </div>
+    <div class="term" id="verification-tax">
+      <dt>Verification Tax</dt>
+      <dd>The Throughput Paradox expressed as a business burden: the hidden cost paid when production outruns testing. It gets paid either up front, by people who investigate, or later, compounded, by everyone downstream of a release that shouldn't have shipped.
+        <div class="meta">Read: <a href="/blog/2026-04-30-the-new-beautiful-testing-teaser/">The New Beautiful Testing</a>, <a href="/blog/2026-06-25-the-drift-audit/">The Drift Audit</a></div>
+      </dd>
+    </div>
+    <div class="term" id="phantom-load">
+      <dt>Phantom Load</dt>
+      <dd>The side effect of AI-generated volume becoming an unplanned load test once the upfront human judgment layer is stripped out for "efficiency." It targets judgment applied before generation; the Verification Tax targets verification applied after.</dd>
+    </div>
+    <div class="term" id="babel-paradox">
+      <dt>Babel Paradox</dt>
+      <dd>AI substitution accelerates, the apprentice pipeline collapses, craft knowledge dies, and organizations can no longer evaluate what they've lost.</dd>
+    </div>
+    <div class="term" id="craft-death-spiral">
+      <dt>Craft Death Spiral</dt>
+      <dd>The descending loop behind the Babel Paradox: an observed exposure gap, AI redundancy washing, apprentice pipeline collapse, and finally craft knowledge death.
+        <div class="meta">Read: <a href="/blog/2026-04-30-the-new-beautiful-testing-teaser/">The New Beautiful Testing</a>, <a href="/blog/2026-05-21-you-re-not-behind-on-ai/">You're Not Behind on AI</a></div>
+      </dd>
+    </div>
+    <div class="term" id="automation-cliff">
+      <dt>Automation Cliff</dt>
+      <dd>The point where a test suite becomes unmaintainable and collapses. Surfaced from QA Wolf's framing.</dd>
+    </div>
+  </dl>
+
+  <div class="section-label" id="depth-governance">Depth, governance and communication</div>
+  <dl>
+    <div class="term" id="deep-stack-dividends">
+      <dt>Deep Stack Dividends</dt>
+      <dd>The payoff from reaching test conditions that always existed but were never reachable: multi-user chaos, data edge cases, environmental drift. These are the categories that lost the budget conversation every quarter until AI absorbed the repetitive layer.
+        <div class="meta">Also known as: Long Tail 8. Read: <a href="/blog/2026-05-21-the-dividends-you-stopped-paying-yourself/">The Dividends You Stopped Paying Yourself</a></div>
+      </dd>
+    </div>
+    <div class="term" id="high-yield-governance">
+      <dt>High-Yield Governance</dt>
+      <dd>A portfolio model for how an organization is set up around AI. AI handles the repetitive layer, practitioners become Liquid Capital that flows to the most critical needs, and the leader becomes the Architect of Solvency. Under this model, Deep Stack Dividends are the yield.
+        <div class="meta">Read: <a href="/blog/2026-05-21-you-re-not-behind-on-ai/">You're Not Behind on AI</a>, <a href="/blog/2026-05-21-the-dividends-you-stopped-paying-yourself/">The Dividends You Stopped Paying Yourself</a></div>
+      </dd>
+    </div>
+    <div class="term" id="human-fiduciary">
+      <dt>Human Fiduciary</dt>
+      <dd>The practitioner as fiduciary: judgment exercised on behalf of others in situations no contract or checklist can fully cover. The tester's obligation is to observe faithfully, connect what they see to what the business depends on, and put it in front of the person who bears the consequence, without deciding on that person's behalf.
+        <div class="meta">Read: <a href="/blog/2026-08-03-the-human-fiduciary/">The Human Fiduciary</a></div>
+      </dd>
+    </div>
+    <div class="term" id="diagnosis-before-investment-rule">
+      <dt>Diagnosis Before Investment Rule</dt>
+      <dd>RJCadvisors' working rule that no one commits budget, tools, or people until the system, the risk, and the people around it are understood. Diagnosis is engineering work, not a courtesy before the sale. A prescription without it is guesswork, and guesswork with a budget attached is still guesswork.</dd>
+    </div>
+    <div class="term" id="documentation-archaeology">
+      <dt>Documentation Archaeology</dt>
+      <dd>Extends Deep Stack Dividends. Map and document what can be determined about a weird undocumented exception, flag explicitly what remains unknown, and resolve those gaps later if a bug explains them. Framed with Chesterton's Fence: replacing legacy code without knowing why its exceptions exist leads to outages.
+        <div class="meta">Read: <a href="/blog/2026-09-22-the-architect-who-isnt-there/">The Architect Who Isn't There</a>, <a href="/blog/2026-05-21-the-dividends-you-stopped-paying-yourself/">The Dividends You Stopped Paying Yourself</a></div>
+      </dd>
+    </div>
+    <div class="term" id="quality-words">
+      <dt>Quality Words</dt>
+      <dd>Engineers define quality as soundness, stability and predictability; the business defines it as efficiency, productivity and operational fit. The disconnect lives in the requirements. Traces to Henrik Andersson's "company quality words" (2012, with Robert Sabourin and Rebecca Sanders).
+        <div class="meta">Read: <a href="/blog/2026-08-03-whose-definition-of-broken/">Whose Definition of Broken</a></div>
+      </dd>
+    </div>
+    <div class="term" id="sherpa-metaphor">
+      <dt>Sherpa Metaphor</dt>
+      <dd>Sherpas are not tour guides. They are the load-bearing human infrastructure of an expedition: route finding, oxygen management, weather reading, rescue, and institutional knowledge of the mountain. The puja before a climb is the moment the expedition acknowledges what the mountain actually requires. The metaphor argues against an AI fluency that mistakes touching the tool for understanding the terrain.
+        <div class="meta">Read: <a href="/blog/2026-06-10-the-puja-cant-be-ceremonial/">The Puja Can't Be Ceremonial</a></div>
+      </dd>
+    </div>
+    <div class="term" id="third-gate">
+      <dt>Third Gate</dt>
+      <dd>The third question on a common AI-readiness checklist: is the data accessible without interpreting human language or resolving ambiguous input? The rule is earned, but incomplete. The sharper question is whether that interpretation can be isolated to one bounded, auditable step, with clean structured data on both sides of it. If it can, that one step is where craft and judgment still live.
+        <div class="meta">Read: <a href="/blog/2026-06-27-the-third-gate/">The Third Gate</a></div>
+      </dd>
+    </div>
+  </dl>
+
+  <div class="section-label" id="practice">Practice</div>
+  <dl>
+    <div class="term" id="appreciating-assets">
+      <dt>Appreciating Assets</dt>
+      <dd>Coined from a guest's remark that memories are the only asset that grows more valuable the longer you hold it, then extended to skills that compound over a career. In the governance sense, practitioners treated as appreciating assets, not reducible headcount.
+        <div class="meta">Read: <a href="/blog/2026-05-21-the-dividends-you-stopped-paying-yourself/">The Dividends You Stopped Paying Yourself</a></div>
+      </dd>
+    </div>
+    <div class="term" id="wave-training">
+      <dt>Wave Training</dt>
+      <dd>RJCadvisors' learning method, built on the idea that people learn in waves. Each wave runs three phases. <strong>Disruption:</strong> the learner meets a concept by experiencing it before being told what it means. <strong>Correction:</strong> the concept is pulled back and tied to what the learner already knows, so they don't walk away with the wrong lesson. <strong>Settling:</strong> the concept moves forward again through practice, sequenced by increasing realism, until it becomes habit. The next wave overtakes the first, pulls back, and settles in turn. The goal is absorbed craft, not dead art. The three waves have been on the RJCadvisors logo since 2010.
+        <div class="meta">Draws on Robert Siegler's overlapping waves theory, Stolovitch and Keeps on told, trained and educated, and Dr. Yang Jwing-Ming on dead art and absorbed craft.</div>
+      </dd>
+    </div>
+  </dl>
+
+  <div class="section-label" id="earlier-names">Earlier names</div>
+  <p class="attribution">Older pieces sometimes use earlier names. Each one points to where the idea lives now.</p>
+  <dl>
+    <div class="term" id="enduring-craft">
+      <dt>Enduring Craft</dt>
+      <dd>A synonym for <a href="#new-beautiful-testing">The New Beautiful Testing</a>, and the term RJCadvisors used internally first.</dd>
+    </div>
+    <div class="term" id="long-tail-8">
+      <dt>Long Tail 8</dt>
+      <dd>See <a href="#deep-stack-dividends">Deep Stack Dividends</a>. In the April glossary it also named eight service categories that AI economics made viable for solo and boutique QA practices.</dd>
+    </div>
+    <div class="term" id="verified-fragility">
+      <dt>Verified Fragility</dt>
+      <dd>See <a href="#validated-fragility">Validated Fragility</a>. Earlier drafts used this wording, and it appears in the April teaser.</dd>
+    </div>
+  </dl>
+
+  <div class="section-label" id="attribution">Attribution</div>
+  <p class="attribution">
+    Cointelligence is borrowed from Ethan Mollick. Quality Words traces to Henrik Andersson. Automation Cliff surfaced from QA Wolf's framing.
+    Wave Training draws on Robert Siegler, Stolovitch and Keeps, and Dr. Yang Jwing-Ming. The Third Gate responds to a checklist in Jordan Blake's <em>Agentic AI for Business</em>.
+    Disagree with a definition, or think a term needs one? I'd like to hear it: <a href="mailto:rick@qameditations.com?subject=Vocabulary">rick@qameditations.com</a>.
+  </p>
+</div>
