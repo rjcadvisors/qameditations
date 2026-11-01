@@ -101,6 +101,25 @@ layout: default
 
   .post-body a:hover { color: var(--amber); }
 
+  .reply-box {
+    margin-top: 56px;
+    padding: 28px 28px 24px;
+    border: 1px solid var(--rule);
+    background: var(--parchment-2);
+  }
+  .reply-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .reply-text { font-size: 16px; line-height: 1.8; color: var(--ink-mid); margin: 0 0 10px; }
+  .reply-text a { color: var(--amber-deep); text-decoration-color: var(--rule); }
+  .reply-text a:hover { color: var(--amber); }
+  .reply-small { font-size: 14px; color: var(--ink-soft); font-style: italic; margin: 0; }
+
   .post-footer {
     margin-top: 64px;
     padding-top: 32px;
@@ -229,6 +248,17 @@ layout: default
 </style>
 
 
+
+  <div class="reply-box">
+    <p class="reply-heading">Agree, disagree, or got something to add?</p>
+    <p class="reply-text">
+      Tell me where you stand. I read every reply:
+      <a href="mailto:rick@qameditations.com?subject=Re:%20{{ page.title | uri_escape }}">rick@qameditations.com</a>
+    </p>
+    <p class="reply-small">
+      Have a piece of your own? <a href="/contribute/">Write to me first with the idea.</a>
+    </p>
+  </div>
 
   <div class="post-footer">
     <span class="post-footer-author">Rick Cavallaro · RJCadvisors Inc.</span>
